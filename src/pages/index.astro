@@ -1,11 +1,264 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Beispiel Heizungsbau GmbH | Wärmepumpen Bochum" description="Wärmepumpen, Heiztechnik und Service in Bochum von Beispiel Heizungsbau GmbH">
+	<div class="page">
+		<header class="hero">
+			<div class="hero-text">
+				<p class="eyebrow">Beispiel Heizungsbau GmbH</p>
+				<h1>Wärmepumpen, Heizungsservice und Energieberatung in Bochum</h1>
+				<p>Wir planen, liefern und warten moderne Wärmepumpen für Einfamilienhäuser, Mehrfamilienhäuser und Gewerbe. Ihr Ansprechpartner in Bochum für effiziente Heiztechnik und schnelle Reparaturen.</p>
+				<div class="hero-actions">
+					<a href="#kontakt" class="button">Jetzt anfragen</a>
+					<a href="#leistungen" class="button secondary">Leistungen ansehen</a>
+				</div>
+			</div>
+			<div class="hero-side">
+				<div class="card">
+					<strong>Standort</strong>
+					<p>Bochum</p>
+				</div>
+				<div class="card">
+					<strong>Telefon</strong>
+					<p>+49 234 123 4567</p>
+				</div>
+				<div class="card">
+					<strong>Service</strong>
+					<p>Wärmepumpen, Heizung, Wartung</p>
+				</div>
+			</div>
+		</header>
+
+		<section id="leistungen" class="section">
+			<h2>Unsere Leistungen</h2>
+			<div class="grid">
+				<article>
+					<h3>Wärmepumpen</h3>
+					<p>Beratung, Planung, Lieferung und Installation von Luft/Wasser- und Erdreich-Wärmepumpen für Neubau und Modernisierung.</p>
+				</article>
+				<article>
+					<h3>Heizungsmodernisierung</h3>
+					<p>Bestehende Heizanlagen prüfen, effizienter machen und umweltfreundliche Technik nachrüsten.</p>
+				</article>
+				<article>
+					<h3>Wartung & Service</h3>
+					<p>Regelmäßige Inspektion, Wartung und schnelle Hilfe bei Störungen – auch für bestehende Wärmepumpenanlagen.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section highlight">
+			<h2>Warum Wärmepumpen?</h2>
+			<ul>
+				<li>Günstigere Betriebskosten im Vergleich zu Öl und Gas</li>
+				<li>Förderfähig durch BAFA und KfW</li>
+				<li>Passend für Neubau und energieeffiziente Sanierung</li>
+			</ul>
+			<p>Wir begleiten Sie von der ersten Bestandsaufnahme bis zur Übergabe der fertigen Anlage.</p>
+		</section>
+
+		<section class="section" id="kontakt">
+			<h2>Kontakt</h2>
+			<p>Schreiben Sie uns eine Nachricht oder rufen Sie an. Wir melden uns schnell mit einem ersten Angebot für Ihre Wärmepumpe in Bochum.</p>
+			<div class="contact-box">
+				<div>
+					<strong>Telefon</strong>
+					<p>+49 234 123 4567</p>
+				</div>
+				<div>
+					<strong>E-Mail</strong>
+					<p>info@beispiel-heizungsbau.de</p>
+				</div>
+				<div>
+					<strong>Adresse</strong>
+					<p>Musterstraße 1, 44787 Bochum</p>
+				</div>
+			</div>
+		</section>
+	</div>
 </Layout>
+
+<style>
+	.page {
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 24px 20px 40px;
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.9fr);
+		gap: 28px;
+		align-items: start;
+		padding: 40px 0 32px;
+	}
+
+	.hero-text .eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		font-size: 0.82rem;
+		margin-bottom: 14px;
+		color: #0f172a;
+		opacity: 0.8;
+	}
+
+	h1 {
+		font-size: clamp(2.3rem, 3.4vw, 3.6rem);
+		margin: 0;
+		line-height: 1.03;
+	}
+
+	.hero-text p {
+		max-width: 640px;
+		font-size: 1.05rem;
+		line-height: 1.75;
+		color: #334155;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-top: 24px;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 14px 22px;
+		border-radius: 999px;
+		background: #0f4c81;
+		color: white;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.button.secondary {
+		background: #f8fafc;
+		color: #0f172a;
+		border: 1px solid #cbd5e1;
+	}
+
+	.hero-side {
+		display: grid;
+		gap: 16px;
+	}
+
+	.card {
+		padding: 20px;
+		border-radius: 20px;
+		background: white;
+		box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+	}
+
+	.card strong {
+		display: block;
+		margin-bottom: 10px;
+		font-size: 0.95rem;
+		color: #0f172a;
+	}
+
+	.section {
+		padding: 36px 0;
+	}
+
+	.section h2 {
+		font-size: 2rem;
+		margin-bottom: 18px;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.grid article {
+		padding: 24px;
+		background: white;
+		border-radius: 20px;
+		box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
+	}
+
+	.grid h3 {
+		margin-top: 0;
+		font-size: 1.2rem;
+	}
+
+	.grid p,
+	.highlight p,
+	.highlight ul,
+	.contact-box p {
+		margin: 0;
+		color: #475569;
+		line-height: 1.75;
+	}
+
+	.highlight {
+		background: #f1f5f9;
+		border-radius: 24px;
+		padding: 28px;
+	}
+
+	.highlight ul {
+		display: grid;
+		gap: 12px;
+		padding-left: 18px;
+	}
+
+	.highlight li {
+		list-style: disc;
+	}
+
+	.contact-box {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.contact-box div {
+		padding: 22px;
+		background: white;
+		border-radius: 18px;
+		box-shadow: 0 18px 35px rgba(15, 23, 42, 0.05);
+	}
+
+	.contact-box strong {
+		display: block;
+		font-size: 0.95rem;
+		margin-bottom: 10px;
+	}
+
+	@media (max-width: 900px) {
+		.hero {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-box,
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.page {
+			padding: 18px 16px 32px;
+		}
+
+		.hero {
+			gap: 22px;
+		}
+
+		.hero-text p,
+		.section h2 {
+			font-size: 1rem;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+</style>
