@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Leistungen | Beispiel Heizungsbau GmbH">
+  <main class="max-w-6xl mx-auto px-6 py-16">
+    <div class="reveal">
+      <h1>Unsere Leistungen</h1>
+      <p class="mt-3">Übersicht unserer Kernkompetenzen. Klicke eine Karte für Details.</p>
+    </div>
+
+    <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Wärmepumpen card -->
+      <a href="/leistungen/waermepumpen" class="reveal group block bg-white rounded-2xl overflow-hidden shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+        <!-- Image placeholder: replace with client photo in production -->
+        <div class="h-44 w-full bg-slate-100 flex items-center justify-center">
+          <!-- Drop / heat icon -->
+          <svg class="w-12 h-12 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2s5 4 5 8a5 5 0 1 1-10 0c0-4 5-8 5-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 11.5a1.5 1.5 0 1 0 0 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Wärmepumpen</h3>
+          <p class="mt-2 text-slate-600">Beratung, Planung und Installation energieeffizienter Wärmepumpen.</p>
+        </div>
+      </a>
+
+      <!-- Klimaanlagen card -->
+      <a href="/leistungen/klimaanlagen" class="reveal group block bg-white rounded-2xl overflow-hidden shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+        <!-- Image placeholder: replace with client photo in production -->
+        <div class="h-44 w-full bg-slate-100 flex items-center justify-center">
+          <!-- Fan icon -->
+          <svg class="w-12 h-12 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 12a5 5 0 1 0 0-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 12c4 0 7 3 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 12c-4 0-7 3-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Klimaanlagen</h3>
+          <p class="mt-2 text-slate-600">Planung und Einbau von Klimaanlagen für Wohn- und Gewerberäume.</p>
+        </div>
+      </a>
+
+      <!-- Photovoltaik card -->
+      <a href="/leistungen/photovoltaik" class="reveal group block bg-white rounded-2xl overflow-hidden shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+        <!-- Image placeholder: replace with client photo in production -->
+        <div class="h-44 w-full bg-slate-100 flex items-center justify-center">
+          <!-- Sun icon -->
+          <svg class="w-12 h-12 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 20v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M4.93 4.93l1.41 1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M17.66 17.66l1.41 1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M2 12h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 12h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M4.93 19.07l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Photovoltaik (PV)</h3>
+          <p class="mt-2 text-slate-600">Konzeption und Installation von PV-Anlagen zur eigenen Stromerzeugung.</p>
+        </div>
+      </a>
+
+    </div>
+  </main>
+</Layout>

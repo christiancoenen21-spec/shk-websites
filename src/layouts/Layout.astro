@@ -1,5 +1,6 @@
 ---
 const { title = 'Beispiel Heizungsbau GmbH', description = 'Wärmepumpen, Heiztechnik und Service in Bochum' } = Astro.props;
+import '../styles/globals.css';
 ---
 <!doctype html>
 <html lang="de">
@@ -13,18 +14,112 @@ const { title = 'Beispiel Heizungsbau GmbH', description = 'Wärmepumpen, Heizte
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<!-- Topbar with phone -->
+		<div class="bg-slate-900 text-white text-sm">
+			<div class="max-w-6xl mx-auto px-6 py-2 flex items-center justify-end">
+				<a href="tel:+492341234567" class="hover:underline">+49 234 123 4567</a>
+			</div>
+		</div>
+		<header class="border-b bg-white/50 backdrop-blur sticky top-0 z-30">
+			<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+				<a href="/" class="flex items-center gap-3">
+								<!-- Inline SVG logo for reliable display and crisp scaling -->
+								<svg class="logo-inline" viewBox="0 0 220 48" role="img" aria-label="Beispiel Heizungsbau GmbH">
+									<defs>
+										<linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+											<stop offset="0%" stop-color="#0f4c81" />
+											<stop offset="100%" stop-color="#06b6d4" />
+										</linearGradient>
+									</defs>
+									<rect x="0" y="0" width="44" height="44" rx="8" fill="url(#g2)" />
+									<path d="M22 12c2 2.5 4 4.5 4 7a4 4 0 1 1-8 0c0-2.5 2-4.5 4-7z" fill="white" opacity="0.95" />
+									<g transform="translate(56,14)">
+										<text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Beispiel Heizungsbau</text>
+										<text x="0" y="16" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#475569">GmbH</text>
+									</g>
+								</svg>
+						</a>
+				<nav class="hidden md:flex gap-6 items-center">
+					<a href="/" class="text-sm text-slate-700 hover:text-slate-900">Start</a>
+					<a href="/aktuelles" class="text-sm text-slate-700 hover:text-slate-900">Aktuelles</a>
+					<a href="/leistungen" class="text-sm text-slate-700 hover:text-slate-900">Leistungen</a>
+					<a href="/referenzen" class="text-sm text-slate-700 hover:text-slate-900">Referenzen</a>
+					<a href="/kontakt" class="text-sm text-slate-700 hover:text-slate-900">Kontakt</a>
+				</nav>
+				<button id="mobile-menu-btn" class="md:hidden p-2 rounded bg-white shadow">Menu</button>
+			</div>
+				<!-- Mobile nav (simple) -->
+				<nav id="mobile-nav" class="md:hidden hidden border-t bg-white">
+					<div class="px-6 py-4 flex flex-col gap-3">
+						<a href="/" class="text-sm text-slate-700">Start</a>
+						<a href="/aktuelles" class="text-sm text-slate-700">Aktuelles</a>
+						<a href="/leistungen" class="text-sm text-slate-700">Leistungen</a>
+						<a href="/referenzen" class="text-sm text-slate-700">Referenzen</a>
+						<a href="/kontakt" class="text-sm text-slate-700">Kontakt</a>
+					</div>
+				</nav>
+		</header>
+
+		<main class="page-root">
+			<slot />
+		</main>
+
+		<footer class="mt-12 border-t bg-white/50 backdrop-blur">
+			<div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+				<div>
+					<div class="text-sm font-semibold">Beispiel Heizungsbau GmbH</div>
+					<div class="text-xs text-slate-500">Musterstraße 1 · 44787 Bochum</div>
+				</div>
+				<div class="flex gap-4 items-center">
+					<a href="#" class="social-icon" aria-label="Instagram">
+						<!-- Instagram SVG -->
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><path d="M7.75 12.02a4.25 4.25 0 1 1 8.5 0 4.25 4.25 0 0 1-8.5 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 7.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</a>
+					<a href="#" class="social-icon" aria-label="Facebook">
+						<!-- Facebook SVG -->
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3V2z" fill="currentColor"/></svg>
+					</a>
+					<a href="#" class="social-icon" aria-label="WhatsApp">
+						<!-- WhatsApp SVG -->
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a9.38 9.38 0 0 1-1.13 4.58L20 21l-4.95-1.29A9.6 9.6 0 1 1 21 11.5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 13.5c-.4-.2-1.2-.6-1.4-.6-.2 0-.5 0-.7.2s-.6.6-.8.8c-.2.2-.4.2-.8.1-.4-.2-1.3-.5-2.3-1.4-1.1-1-1.8-2.2-2-2.6-.2-.4-.02-.6.16-.8.16-.16.4-.4.6-.6.2-.2.3-.4.5-.6.2-.2.1-.4 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6-.2 0-.5 0-.8.0-.3 0-.7.1-1 .4s-1 1-1 2.4 1 2.8 1.3 3.1c.3.3 2 3 4.8 4.3 2.8 1.3 2.8 0 3.3-0.5.4-.5.9-1.6 1-1.8.1-.2.1-.4 0-.6-.1-.2-.5-.4-.9-.6z" fill="currentColor"/></svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Small IntersectionObserver to add 'is-revealed' to elements with class 'reveal'
+			(() => {
+				if (typeof window === 'undefined') return;
+				const io = new IntersectionObserver((entries) => {
+					entries.forEach((e) => {
+						if (e.isIntersecting) {
+							e.target.classList.add('is-revealed');
+							io.unobserve(e.target);
+						}
+					});
+				}, { threshold: 0.12 });
+
+				document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+				// Simple page transition on internal link clicks
+				document.addEventListener('click', (ev) => {
+					const a = ev.target.closest('a');
+					if (!a) return;
+					const href = a.getAttribute('href');
+					if (!href || href.startsWith('http') || href.startsWith('#')) return;
+					ev.preventDefault();
+					document.documentElement.classList.add('is-navigating');
+					setTimeout(() => (window.location.href = href), 220);
+				});
+
+				// Mobile menu toggle
+				document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+					const m = document.getElementById('mobile-nav');
+					if (!m) return;
+					m.classList.toggle('hidden');
+				});
+			})();
+		</script>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		font-family: Inter, system-ui, sans-serif;
-		background: #f8f8f7;
-		color: #1f2937;
-	}
-</style>

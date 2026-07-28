@@ -3,262 +3,143 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Beispiel Heizungsbau GmbH | Wärmepumpen Bochum" description="Wärmepumpen, Heiztechnik und Service in Bochum von Beispiel Heizungsbau GmbH">
-	<div class="page">
-		<header class="hero">
-			<div class="hero-text">
-				<p class="eyebrow">Beispiel Heizungsbau GmbH</p>
-				<h1>Wärmepumpen, Heizungsservice und Energieberatung in Bochum</h1>
-				<p>Wir planen, liefern und warten moderne Wärmepumpen für Einfamilienhäuser, Mehrfamilienhäuser und Gewerbe. Ihr Ansprechpartner in Bochum für effiziente Heiztechnik und schnelle Reparaturen.</p>
-				<div class="hero-actions">
-					<a href="#kontakt" class="button">Jetzt anfragen</a>
-					<a href="#leistungen" class="button secondary">Leistungen ansehen</a>
-				</div>
-			</div>
-			<div class="hero-side">
-				<div class="card">
-					<strong>Standort</strong>
-					<p>Bochum</p>
-				</div>
-				<div class="card">
-					<strong>Telefon</strong>
-					<p>+49 234 123 4567</p>
-				</div>
-				<div class="card">
-					<strong>Service</strong>
-					<p>Wärmepumpen, Heizung, Wartung</p>
-				</div>
-			</div>
-		</header>
+    <main class="max-w-6xl mx-auto px-6 py-16">
+        <!-- Top bar with centered logo and quick links (like reference) -->
+        <div class="mb-8 text-center">
+            <div class="inline-block px-4 py-2">
+                <div class="text-3xl font-extrabold tracking-wide text-brand-primary">BEISPIEL</div>
+            </div>
+            <div class="mt-3 flex justify-center gap-3">
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><path d="M7.75 12.02C7.75 9.94 9.44 8.25 11.5 8.25S15.25 9.94 15.25 12.02 13.56 15.79 11.5 15.79 7.75 14.1 7.75 12.02z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3V2z" fill="currentColor"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a9.38 9.38 0 0 1-1.13 4.58L20 21l-4.95-1.29A9.6 9.6 0 1 1 21 11.5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 13.5c-.4-.2-1.2-.6-1.4-.6-.2 0-.5 0-.7.2s-.6.6-.8.8c-.2.2-.4.2-.8.1-.4-.2-1.3-.5-2.3-1.4-1.1-1-1.8-2.2-2-2.6-.2-.4-.02-.6.16-.8.16-.16.4-.4.6-.6.2-.2.3-.4.5-.6.2-.2.1-.4 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6-.2 0-.5 0-.8.0-.3 0-.7.1-1 .4s-1 1-1 2.4 1 2.8 1.3 3.1c.3.3 2 3 4.8 4.3 2.8 1.3 2.8 0 3.3-0.5.4-.5.9-1.6 1-1.8.1-.2.1-.4 0-.6-.1-.2-.5-.4-.9-.6z" fill="currentColor"/></svg>
+                </a>
+            </div>
+        </div>
 
-		<section id="leistungen" class="section">
-			<h2>Unsere Leistungen</h2>
-			<div class="grid">
-				<article>
-					<h3>Wärmepumpen</h3>
-					<p>Beratung, Planung, Lieferung und Installation von Luft/Wasser- und Erdreich-Wärmepumpen für Neubau und Modernisierung.</p>
-				</article>
-				<article>
-					<h3>Heizungsmodernisierung</h3>
-					<p>Bestehende Heizanlagen prüfen, effizienter machen und umweltfreundliche Technik nachrüsten.</p>
-				</article>
-				<article>
-					<h3>Wartung & Service</h3>
-					<p>Regelmäßige Inspektion, Wartung und schnelle Hilfe bei Störungen – auch für bestehende Wärmepumpenanlagen.</p>
-				</article>
-			</div>
-		</section>
+        <header class="grid lg:grid-cols-[1.6fr_420px] gap-12 items-start">
+            <div class="reveal">
+                <p class="text-sm uppercase tracking-widest text-slate-600">Beispiel Heizungsbau GmbH</p>
+                <h1 class="mt-4">Wärmepumpen, Heizungsservice und Energieberatung in Bochum</h1>
+                <p class="mt-6 text-slate-600 max-w-2xl">Wir planen, liefern und warten moderne Wärmepumpen für Einfamilienhäuser, Mehrfamilienhäuser und Gewerbe. Ihr Ansprechpartner in Bochum für effiziente Heiztechnik und schnelle Reparaturen.</p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#kontakt" class="inline-block bg-brand-primary text-white px-6 py-3 rounded-full font-semibold shadow-soft-lg transform-gpu transition hover:-translate-y-1 hover:shadow-xl">Jetzt anfragen</a>
+                    <a href="#leistungen" class="inline-block border border-slate-200 text-slate-900 px-5 py-3 rounded-full transition hover:-translate-y-1">Leistungen ansehen</a>
+                </div>
+            </div>
 
-		<section class="section highlight">
-			<h2>Warum Wärmepumpen?</h2>
-			<ul>
-				<li>Günstigere Betriebskosten im Vergleich zu Öl und Gas</li>
-				<li>Förderfähig durch BAFA und KfW</li>
-				<li>Passend für Neubau und energieeffiziente Sanierung</li>
-			</ul>
-			<p>Wir begleiten Sie von der ersten Bestandsaufnahme bis zur Übergabe der fertigen Anlage.</p>
-		</section>
+            <aside class="space-y-5">
+                <div class="reveal bg-white p-6 shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <strong class="block text-sm text-slate-700">Standort</strong>
+                    <p class="mt-2 text-lg font-medium">Bochum</p>
+                </div>
+                <div class="reveal bg-white p-6 shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <strong class="block text-sm text-slate-700">Telefon</strong>
+                    <p class="mt-2 text-lg font-medium">+49 234 123 4567</p>
+                </div>
+                <div class="reveal bg-white p-6 shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <strong class="block text-sm text-slate-700">Service</strong>
+                    <p class="mt-2 text-lg font-medium">Wärmepumpen, Heizung, Wartung</p>
+                </div>
+            </aside>
+        </header>
 
-		<section class="section" id="kontakt">
-			<h2>Kontakt</h2>
-			<p>Schreiben Sie uns eine Nachricht oder rufen Sie an. Wir melden uns schnell mit einem ersten Angebot für Ihre Wärmepumpe in Bochum.</p>
-			<div class="contact-box">
-				<div>
-					<strong>Telefon</strong>
-					<p>+49 234 123 4567</p>
-				</div>
-				<div>
-					<strong>E-Mail</strong>
-					<p>info@beispiel-heizungsbau.de</p>
-				</div>
-				<div>
-					<strong>Adresse</strong>
-					<p>Musterstraße 1, 44787 Bochum</p>
-				</div>
-			</div>
-		</section>
-	</div>
+        <!-- Hero visual: large image-like placeholder to mimic reference image-heavy layout -->
+        <div class="mt-8 reveal">
+            <div class="hero-visual w-full rounded-2xl overflow-hidden shadow-soft-lg">
+                <!-- decorative placeholder, not copyrighted content -->
+                <div class="h-64 md:h-96 bg-gradient-to-r from-slate-300 via-slate-200 to-slate-300 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl text-slate-500">🏠</div>
+                        <p class="mt-4 text-slate-600">Platzhalter für Bildsprache (Geräte / Installationen)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="leistungen" class="mt-16 reveal">
+            <h2>Unsere Leistungen</h2>
+            <div class="mt-8 grid md:grid-cols-3 gap-6">
+                <article class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <h3>Wärmepumpen</h3>
+                    <p class="mt-3">Beratung, Planung, Lieferung und Installation von Luft/Wasser- und Erdreich-Wärmepumpen für Neubau und Modernisierung.</p>
+                </article>
+                <article class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <h3>Heizungsmodernisierung</h3>
+                    <p class="mt-3">Bestehende Heizanlagen prüfen, effizienter machen und umweltfreundliche Technik nachrüsten.</p>
+                </article>
+                <article class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <h3>Wartung & Service</h3>
+                    <p class="mt-3">Regelmäßige Inspektion, Wartung und schnelle Hilfe bei Störungen – auch für bestehende Wärmepumpenanlagen.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Referenzen / Aktuelle Projekte -->
+        <section id="referenzen" class="mt-16 reveal">
+            <h2>Referenzen / Aktuelle Projekte</h2>
+            <p class="mt-2 text-slate-600">Auszug aus aktuellen Projekten — Platzhalterinhalte, Kundenbilder später ersetzen.</p>
+
+            <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <article class="bg-white p-5 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <div class="h-40 bg-slate-100 rounded-md flex items-center justify-center">
+                        <!-- placeholder image/icon -->
+                        <svg class="w-14 h-14 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 17l4-10 4 6 6-8 2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="mt-4 text-lg font-semibold">Wärmepumpen‑Installation Einfamilienhaus, Bochum</h3>
+                    <p class="mt-2 text-slate-600">Neubau: Installation einer Luft/Wasser‑Wärmepumpe, Inbetriebnahme und Einweisung.</p>
+                </article>
+
+                <article class="bg-white p-5 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <div class="h-40 bg-slate-100 rounded-md flex items-center justify-center">
+                        <svg class="w-14 h-14 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 22h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3 class="mt-4 text-lg font-semibold">Klimatisierung Bürogebäude, Bochum</h3>
+                    <p class="mt-2 text-slate-600">Modernisierung mit mehreren Split‑Klimaanlagen und zentraler Steuerung.</p>
+                </article>
+
+                <article class="bg-white p-5 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <div class="h-40 bg-slate-100 rounded-md flex items-center justify-center">
+                        <svg class="w-14 h-14 text-slate-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3 class="mt-4 text-lg font-semibold">Photovoltaik‑Dachanlage, Bochum</h3>
+                    <p class="mt-2 text-slate-600">20 kWp PV‑Anlage mit Einspeise- und Eigenverbrauchsoptimierung.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="mt-16 bg-slate-50 p-8 rounded-2xl reveal">
+            <h2>Warum Wärmepumpen?</h2>
+            <ul class="mt-4 list-disc list-inside text-slate-700 space-y-2">
+                <li>Günstigere Betriebskosten im Vergleich zu Öl und Gas</li>
+                <li>Förderfähig durch BAFA und KfW</li>
+                <li>Passend für Neubau und energieeffiziente Sanierung</li>
+            </ul>
+            <p class="mt-4">Wir begleiten Sie von der ersten Bestandsaufnahme bis zur Übergabe der fertigen Anlage.</p>
+        </section>
+
+        <section id="kontakt" class="mt-16 reveal">
+            <h2>Kontakt</h2>
+            <p class="mt-3">Schreiben Sie uns eine Nachricht oder rufen Sie an. Wir melden uns schnell mit einem ersten Angebot für Ihre Wärmepumpe in Bochum.</p>
+            <div class="mt-6 grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <strong class="text-sm text-slate-700">Telefon</strong>
+                    <p class="mt-2 font-medium">+49 234 123 4567</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <strong class="text-sm text-slate-700">E-Mail</strong>
+                    <p class="mt-2 font-medium">info@beispiel-heizungsbau.de</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
+                    <strong class="text-sm text-slate-700">Adresse</strong>
+                    <p class="mt-2 font-medium">Musterstraße 1, 44787 Bochum</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </Layout>
-
-<style>
-	.page {
-		max-width: 1080px;
-		margin: 0 auto;
-		padding: 24px 20px 40px;
-	}
-
-	.hero {
-		display: grid;
-		grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.9fr);
-		gap: 28px;
-		align-items: start;
-		padding: 40px 0 32px;
-	}
-
-	.hero-text .eyebrow {
-		text-transform: uppercase;
-		letter-spacing: 0.14em;
-		font-size: 0.82rem;
-		margin-bottom: 14px;
-		color: #0f172a;
-		opacity: 0.8;
-	}
-
-	h1 {
-		font-size: clamp(2.3rem, 3.4vw, 3.6rem);
-		margin: 0;
-		line-height: 1.03;
-	}
-
-	.hero-text p {
-		max-width: 640px;
-		font-size: 1.05rem;
-		line-height: 1.75;
-		color: #334155;
-	}
-
-	.hero-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 16px;
-		margin-top: 24px;
-	}
-
-	.button {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 14px 22px;
-		border-radius: 999px;
-		background: #0f4c81;
-		color: white;
-		text-decoration: none;
-		font-weight: 600;
-	}
-
-	.button.secondary {
-		background: #f8fafc;
-		color: #0f172a;
-		border: 1px solid #cbd5e1;
-	}
-
-	.hero-side {
-		display: grid;
-		gap: 16px;
-	}
-
-	.card {
-		padding: 20px;
-		border-radius: 20px;
-		background: white;
-		box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-	}
-
-	.card strong {
-		display: block;
-		margin-bottom: 10px;
-		font-size: 0.95rem;
-		color: #0f172a;
-	}
-
-	.section {
-		padding: 36px 0;
-	}
-
-	.section h2 {
-		font-size: 2rem;
-		margin-bottom: 18px;
-	}
-
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 18px;
-	}
-
-	.grid article {
-		padding: 24px;
-		background: white;
-		border-radius: 20px;
-		box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
-	}
-
-	.grid h3 {
-		margin-top: 0;
-		font-size: 1.2rem;
-	}
-
-	.grid p,
-	.highlight p,
-	.highlight ul,
-	.contact-box p {
-		margin: 0;
-		color: #475569;
-		line-height: 1.75;
-	}
-
-	.highlight {
-		background: #f1f5f9;
-		border-radius: 24px;
-		padding: 28px;
-	}
-
-	.highlight ul {
-		display: grid;
-		gap: 12px;
-		padding-left: 18px;
-	}
-
-	.highlight li {
-		list-style: disc;
-	}
-
-	.contact-box {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 18px;
-	}
-
-	.contact-box div {
-		padding: 22px;
-		background: white;
-		border-radius: 18px;
-		box-shadow: 0 18px 35px rgba(15, 23, 42, 0.05);
-	}
-
-	.contact-box strong {
-		display: block;
-		font-size: 0.95rem;
-		margin-bottom: 10px;
-	}
-
-	@media (max-width: 900px) {
-		.hero {
-			grid-template-columns: 1fr;
-		}
-
-		.contact-box,
-		.grid {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	@media (max-width: 640px) {
-		.page {
-			padding: 18px 16px 32px;
-		}
-
-		.hero {
-			gap: 22px;
-		}
-
-		.hero-text p,
-		.section h2 {
-			font-size: 1rem;
-		}
-
-		.hero-actions {
-			flex-direction: column;
-			align-items: stretch;
-		}
-	}
-</style>

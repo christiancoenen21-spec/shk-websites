@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  color: #111827;
+  background-color: #f8f8f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f8f8f7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(0.998);
+  transition: opacity 620ms cubic-bezier(.2,.9,.25,1), transform 620ms cubic-bezier(.2,.9,.25,1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* subtle focus ring for interactive elements */
+a:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 3px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+  }
+
+  body {
+    @apply text-slate-800;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-slate-900;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold leading-snug text-slate-900;
+  }
+
+  h3 {
+    @apply text-lg font-semibold text-slate-800;
+  }
+
+  p {
+    @apply text-base text-slate-700 leading-relaxed;
+  }
+
+  a {
+    @apply transition-transform duration-200 ease-in-out;
+  }
+
+  .card {
+    @apply rounded-2xl;
+  }
+}
+
+/* hero visual placeholder tweaks */
+.hero-visual p {
+  @apply text-sm md:text-base;
+}
+
+/* Header / Logo */
+.logo-mark {
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+}
+
+.logo-img {
+  display: block;
+  height: 40px;
+}
+
+.logo-inline {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo-inline { height: 48px; }
+}
+
+/* Footer social icons */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.8);
+  color: #0f172a;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, rgba(15,76,129,0.95), rgba(6,182,212,0.95));
+  color: white;
+}
+
+/* Page transition */
+:root.is-navigating, .is-navigating body {
+  cursor: progress;
+}
+
+.page-root {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.is-navigating .page-root {
+  opacity: 0.6;
+  transform: translateY(-4px);
+}
