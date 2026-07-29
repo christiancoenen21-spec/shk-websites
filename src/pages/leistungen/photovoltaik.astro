@@ -6,14 +6,27 @@ import Layout from '../../layouts/Layout.astro';
   <main class="max-w-6xl mx-auto px-6 py-16">
     <a href="/leistungen" class="text-sm text-slate-600 hover:underline">← Zurück zur Übersicht</a>
 
-    <div class="mt-6 reveal">
+    <div class="mt-6 reveal flex items-center gap-4">
+      <span class="detail-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#facc15" stroke-width="1.6">
+          <circle cx="12" cy="12" r="3.2" stroke-width="1.8"/>
+          <path d="M12 2v2" stroke-linecap="round"/>
+          <path d="M12 20v2" stroke-linecap="round"/>
+          <path d="M4.93 4.93l1.41 1.41" stroke-linecap="round"/>
+          <path d="M17.66 17.66l1.41 1.41" stroke-linecap="round"/>
+          <path d="M2 12h2" stroke-linecap="round"/>
+          <path d="M20 12h2" stroke-linecap="round"/>
+          <path d="M4.93 19.07l1.41-1.41" stroke-linecap="round"/>
+          <path d="M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+        </svg>
+      </span>
       <h1>Photovoltaik (PV)</h1>
-      <p class="mt-3 text-slate-600">Konzeption und Installation von PV-Anlagen zur eigenen Stromerzeugung.</p>
     </div>
+    <p class="mt-3 text-slate-600 reveal">Konzeption und Installation von PV-Anlagen zur eigenen Stromerzeugung.</p>
 
-    <!-- Hero image - replace with client photo if available -->
+    <!-- Hero image -->
     <div class="mt-8 reveal">
-      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80" alt="Photovoltaik" class="w-full h-72 object-cover rounded-2xl shadow-soft-lg" />
+      <img src="/images/leistungen-photovoltaik.jpg" alt="Monteur mit Bauplan auf einem Dach mit Photovoltaik-Anlage" width="1400" height="933" class="w-full h-72 object-cover rounded-2xl shadow-soft-lg" />
     </div>
 
     <section class="mt-8 reveal">
@@ -26,3 +39,22 @@ import Layout from '../../layouts/Layout.astro';
     </section>
   </main>
 </Layout>
+
+<style>
+  .detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-surface);
+    box-shadow: var(--shadow-default);
+  }
+
+  .detail-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+</style>

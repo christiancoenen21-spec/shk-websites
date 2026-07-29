@@ -47,19 +47,62 @@ import Button from '../components/Button.astro';
     <main class="max-w-6xl mx-auto px-6 py-16">
         <section id="leistungen" class="reveal">
             <h2>Unsere Leistungen</h2>
-            <div class="mt-8 grid md:grid-cols-3 gap-6">
-                <article class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
-                    <h3>Wärmepumpen</h3>
-                    <p class="mt-3">Beratung, Planung, Lieferung und Installation von Luft/Wasser- und Erdreich-Wärmepumpen für Neubau und Modernisierung.</p>
+            <p class="mt-2 text-slate-600">Schwerpunkt Wärmepumpen – dazu Klimaanlagen sowie Wartung und Service für bestehende Anlagen.</p>
+
+            <div class="mt-8 grid lg:grid-cols-[1.4fr_1fr] gap-6 items-start">
+                <article class="service-card service-card--featured">
+                    <div class="service-card__media aspect-[4/5]">
+                        <img
+                            src="/images/leistungen-waermepumpen.jpg"
+                            alt="Techniker bei der Installation und Prüfung einer Wärmepumpe"
+                            width="1200"
+                            height="2133"
+                            loading="lazy"
+                        />
+                        <div class="service-card__tint"></div>
+                    </div>
+                    <div class="service-card__body">
+                        <span class="service-card__tag">Unser Schwerpunkt</span>
+                        <h3>Wärmepumpen</h3>
+                        <p class="mt-3">Beratung, Planung, Lieferung und Installation von Luft/Wasser- und Erdreich-Wärmepumpen für Neubau und Modernisierung.</p>
+                    </div>
                 </article>
-                <article class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
-                    <h3>Heizungsmodernisierung</h3>
-                    <p class="mt-3">Bestehende Heizanlagen prüfen, effizienter machen und umweltfreundliche Technik nachrüsten.</p>
-                </article>
-                <article class="bg-white p-6 rounded-2xl shadow-soft-lg hover:shadow-xl transition hover:-translate-y-1">
-                    <h3>Wartung & Service</h3>
-                    <p class="mt-3">Regelmäßige Inspektion, Wartung und schnelle Hilfe bei Störungen – auch für bestehende Wärmepumpenanlagen.</p>
-                </article>
+
+                <div class="grid gap-6">
+                    <article class="service-card">
+                        <div class="service-card__media aspect-[4/3]">
+                            <img
+                                src="/images/leistungen-klimaanlagen.jpg"
+                                alt="Techniker prüft den Kältemitteldruck einer Klimaanlage mit einem Manometer"
+                                width="1000"
+                                height="1430"
+                                loading="lazy"
+                            />
+                            <div class="service-card__tint"></div>
+                        </div>
+                        <div class="service-card__body">
+                            <h3>Klimaanlagen</h3>
+                            <p class="mt-3">Planung, Installation und Wartung von Split-Klimaanlagen für Wohn- und Gewerberäume.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__media aspect-[4/3]">
+                            <img
+                                src="/images/leistungen-service.jpg"
+                                alt="Techniker führt eine Dichtheitsprüfung an einer Außeneinheit durch"
+                                width="1000"
+                                height="1500"
+                                loading="lazy"
+                            />
+                            <div class="service-card__tint"></div>
+                        </div>
+                        <div class="service-card__body">
+                            <h3>Wartung & Service</h3>
+                            <p class="mt-3">Regelmäßige Inspektion, Wartung und schnelle Hilfe bei Störungen – auch für bestehende Wärmepumpenanlagen.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -149,5 +192,71 @@ import Button from '../components/Button.astro';
     .hero-card:hover {
         transform: translateY(-4px);
         box-shadow: var(--shadow-hover);
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--color-bg-surface);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-default);
+        transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .service-card--featured {
+        height: 100%;
+    }
+
+    .service-card__media {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card__media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 500ms ease;
+    }
+
+    .service-card:hover .service-card__media img {
+        transform: scale(1.06);
+    }
+
+    .service-card__tint {
+        position: absolute;
+        inset: 0;
+        background: var(--color-brand-primary);
+        mix-blend-mode: color;
+        opacity: 0.55;
+        transition: opacity 300ms ease;
+    }
+
+    .service-card:hover .service-card__tint {
+        opacity: 0.3;
+    }
+
+    .service-card__body {
+        padding: var(--spacing-lg);
+    }
+
+    .service-card__tag {
+        display: inline-block;
+        font-size: var(--text-eyebrow-size);
+        letter-spacing: var(--text-eyebrow-letter-spacing);
+        font-weight: var(--text-eyebrow-weight);
+        text-transform: uppercase;
+        color: var(--color-brand-primary);
+        background: var(--color-bg-info-subtle);
+        padding: 2px var(--spacing-sm);
+        border-radius: var(--radius-full);
+        margin-bottom: var(--spacing-sm);
     }
 </style>
