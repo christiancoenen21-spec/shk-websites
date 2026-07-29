@@ -44,14 +44,135 @@ import Button from '../components/Button.astro';
         </div>
     </section>
 
-    <main class="max-w-6xl mx-auto px-6 py-16">
+    <section class="story reveal" aria-label="Unsere Leistungen im Überblick">
+        <div class="mx-auto px-6 lg:px-12 max-w-[1800px]">
+            <div class="story-layout">
+                <div class="story-media">
+                    <p class="story__eyebrow">Von der Beratung bis zur fertigen Anlage</p>
+                    <div class="story-media__frame">
+                        <svg id="house-svg" viewBox="40 115 720 370" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematische Darstellung eines Hauses mit Photovoltaik, Wärmepumpe und Klimaanlage">
+                            <!-- Haus (neutral, ändert sich nie) -->
+                            <g class="house-base" fill="none" stroke="var(--gray-400)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="60" y1="460" x2="740" y2="460"/>
+                                <polygon points="200,260 390,140 580,260"/>
+                                <rect x="220" y="260" width="340" height="200"/>
+                                <rect x="365" y="360" width="50" height="100"/>
+                                <circle cx="405" cy="410" r="2.5" fill="var(--gray-400)"/>
+                                <rect x="255" y="310" width="55" height="55"/>
+                                <line x1="282.5" y1="310" x2="282.5" y2="365"/>
+                                <line x1="255" y1="337.5" x2="310" y2="337.5"/>
+                            </g>
+
+                            <!-- Photovoltaik -->
+                            <g class="house-feature pv-group" transform="translate(390,150) rotate(30)" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="15" y="15" width="55" height="35"/>
+                                <rect x="80" y="15" width="55" height="35"/>
+                                <rect x="15" y="58" width="55" height="35"/>
+                                <rect x="80" y="58" width="55" height="35"/>
+                                <line x1="42.5" y1="15" x2="42.5" y2="50"/>
+                                <line x1="107.5" y1="15" x2="107.5" y2="50"/>
+                                <line x1="42.5" y1="58" x2="42.5" y2="93"/>
+                                <line x1="107.5" y1="58" x2="107.5" y2="93"/>
+                                <line x1="15" y1="32.5" x2="70" y2="32.5"/>
+                                <line x1="80" y1="32.5" x2="135" y2="32.5"/>
+                                <line x1="15" y1="75.5" x2="70" y2="75.5"/>
+                                <line x1="80" y1="75.5" x2="135" y2="75.5"/>
+                            </g>
+
+                            <!-- Wärmepumpe -->
+                            <g class="house-feature wp-group" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect class="wp-box" x="90" y="380" width="100" height="70"/>
+                                <rect class="wp-box" x="95" y="450" width="90" height="8"/>
+                                <line class="wp-box" x1="98" y1="392" x2="182" y2="392"/>
+                                <line class="wp-box" x1="98" y1="404" x2="182" y2="404"/>
+                                <line class="wp-box" x1="98" y1="416" x2="182" y2="416"/>
+                                <line class="wp-box" x1="98" y1="428" x2="182" y2="428"/>
+                                <circle class="wp-fan" cx="140" cy="415" r="16"/>
+                                <line class="wp-fan" x1="140" y1="399" x2="140" y2="431"/>
+                                <line class="wp-fan" x1="124" y1="415" x2="156" y2="415"/>
+                                <polyline class="wp-box" points="190,392 210,392 210,420 220,420"/>
+                            </g>
+
+                            <!-- Klimaanlage -->
+                            <g class="house-feature ac-group" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="480" y="300" width="55" height="35"/>
+                                <line x1="490" y1="335" x2="490" y2="350"/>
+                                <line x1="525" y1="335" x2="525" y2="350"/>
+                                <line x1="488" y1="310" x2="527" y2="310"/>
+                                <line x1="488" y1="320" x2="527" y2="320"/>
+                                <line x1="507" y1="350" x2="507" y2="460"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="story-dots" aria-hidden="true">
+                        <span class="story-dot is-active" data-dot="photovoltaik"></span>
+                        <span class="story-dot" data-dot="waermepumpen"></span>
+                        <span class="story-dot" data-dot="klimaanlagen"></span>
+                    </div>
+                </div>
+
+                <div class="story-content">
+                    <div class="story-block is-active" data-story="photovoltaik">
+                        <span class="story-block__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#facc15" stroke-width="1.6">
+                                <circle cx="12" cy="12" r="3.2" stroke-width="1.8"/>
+                                <path d="M12 2v2" stroke-linecap="round"/>
+                                <path d="M12 20v2" stroke-linecap="round"/>
+                                <path d="M4.93 4.93l1.41 1.41" stroke-linecap="round"/>
+                                <path d="M17.66 17.66l1.41 1.41" stroke-linecap="round"/>
+                                <path d="M2 12h2" stroke-linecap="round"/>
+                                <path d="M20 12h2" stroke-linecap="round"/>
+                                <path d="M4.93 19.07l1.41-1.41" stroke-linecap="round"/>
+                                <path d="M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <h3>Photovoltaik</h3>
+                        <p>Konzeption und Installation von PV-Anlagen zur eigenen Stromerzeugung. Wir prüfen Dachfläche, Ausrichtung und Verschattung und berechnen daraus die wirtschaftlich sinnvolle Anlagengröße. Montage und Wechselrichter-Integration übernehmen wir komplett – nach der Inbetriebnahme behalten wir Ertrag und Funktion Ihrer Anlage im laufenden Monitoring im Blick.</p>
+                    </div>
+
+                    <div class="story-block" data-story="waermepumpen">
+                        <span class="story-block__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 9h13m0 0-3-3m3 3-3 3" stroke="var(--error-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20 15H7m0 0 3 3m-3-3 3-3" stroke="var(--color-brand-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <h3>Wärmepumpen</h3>
+                        <p>Beratung, Planung und Installation energieeffizienter Wärmepumpen für Neubau und Modernisierung. Wir analysieren Ihr Gebäude, ermitteln den passenden Anlagentyp – Luft/Wasser oder Erdreich – und legen die Größe nach Ihrem tatsächlichen Wärmebedarf aus. Zur Finanzierung beraten wir zu Fördermitteln wie BAFA und KfW und übernehmen auf Wunsch auch Inbetriebnahme und Einweisung.</p>
+                    </div>
+
+                    <div class="story-block" data-story="klimaanlagen">
+                        <span class="story-block__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="var(--cyan-500)" stroke-width="1.6" stroke-linecap="round">
+                                <path d="M12 3v18"/>
+                                <path d="M4.5 7.5l15 9"/>
+                                <path d="M19.5 7.5l-15 9"/>
+                                <path d="M12 3l-2 2M12 3l2 2"/>
+                                <path d="M12 21l-2-2M12 21l2-2"/>
+                                <path d="M4.5 7.5l2.7-.7M4.5 7.5l.7 2.7"/>
+                                <path d="M19.5 16.5l-2.7.7M19.5 16.5l-.7-2.7"/>
+                                <path d="M19.5 7.5l-2.7.7M19.5 7.5l-.7 2.7"/>
+                                <path d="M4.5 16.5l2.7-.7M4.5 16.5l.7-2.7"/>
+                            </svg>
+                        </span>
+                        <h3>Klimaanlagen</h3>
+                        <p>Planung und Einbau von Klimaanlagen für Wohn- und Gewerberäume. Ob einzelne Split-Klimaanlage im Schlafzimmer oder mehrere Innengeräte mit zentraler Steuerung im Bürogebäude – wir beraten zur passenden Anlagengröße und zum Kältemittel. Nach der fachgerechten Installation sorgen Serviceverträge inklusive Notdienst dafür, dass Ihre Anlage zuverlässig läuft.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="story__closing reveal">Wir kümmern uns um alles – von der ersten Planung bis zur laufenden Wartung.</p>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-6 py-10">
         <section id="leistungen" class="reveal">
             <h2>Unsere Leistungen</h2>
             <p class="mt-2 text-slate-600">Schwerpunkt Wärmepumpen – dazu Klimaanlagen sowie Wartung und Service für bestehende Anlagen.</p>
 
-            <div class="mt-8 grid lg:grid-cols-[1.4fr_1fr] gap-6 items-start">
+            <div class="mt-6 grid lg:grid-cols-[1.4fr_1fr] gap-5 items-start">
                 <article class="service-card service-card--featured">
-                    <div class="service-card__media aspect-[4/5]">
+                    <div class="service-card__media aspect-[4/4.2]">
                         <img
                             src="/images/leistungen-waermepumpen.jpg"
                             alt="Techniker bei der Installation und Prüfung einer Wärmepumpe"
@@ -259,4 +380,291 @@ import Button from '../components/Button.astro';
         border-radius: var(--radius-full);
         margin-bottom: var(--spacing-sm);
     }
+
+    /* Leistungs-Story: vertikaler Scroll-Übergang zwischen Hero und Leistungen */
+    .story {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .story__eyebrow {
+        font-size: var(--text-eyebrow-size);
+        letter-spacing: var(--text-eyebrow-letter-spacing);
+        font-weight: var(--text-eyebrow-weight);
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        text-align: center;
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .story-layout {
+        display: grid;
+        gap: var(--spacing-2xl);
+    }
+
+    .story-media {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .story-media__frame {
+        position: relative;
+        aspect-ratio: 720 / 370;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        background: var(--color-bg-surface);
+        box-shadow: var(--shadow-default);
+    }
+
+    #house-svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .story-dots {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        margin-top: var(--spacing-lg);
+    }
+
+    .story-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: var(--radius-full);
+        background: var(--color-border-default);
+        transition: background-color 300ms ease, transform 300ms ease;
+    }
+
+    .story-dot.is-active {
+        background: var(--color-brand-primary);
+        transform: scale(1.4);
+    }
+
+    .story-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-3xl);
+    }
+
+    .story-block {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        opacity: 0.45;
+        transform: translateY(6px);
+        transition: opacity 650ms cubic-bezier(.2,.9,.25,1), transform 650ms cubic-bezier(.2,.9,.25,1);
+    }
+
+    .story-block.is-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .story__closing {
+        margin-top: var(--spacing-3xl);
+        text-align: center;
+        font-size: var(--text-h3-size);
+        font-weight: 600;
+        color: var(--color-text-primary);
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .story-block__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: var(--radius-full);
+        background: var(--color-bg-surface);
+        box-shadow: var(--shadow-default);
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .story-block__icon svg {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .story-block h3 {
+        margin: 0;
+        font-size: var(--text-h3-size);
+        font-weight: 700;
+    }
+
+    .story-block p {
+        margin: 0;
+        max-width: 34rem;
+        font-size: var(--text-body-size);
+        line-height: var(--text-body-line-height);
+    }
+
+    .house-feature {
+        color: var(--gray-400);
+        transition: color 650ms ease;
+    }
+
+    .pv-group.is-active {
+        color: #facc15;
+    }
+
+    .wp-group .wp-box,
+    .wp-group .wp-fan {
+        transition: color 650ms ease;
+    }
+
+    .wp-group.is-active .wp-box {
+        color: var(--color-brand-primary);
+    }
+
+    .wp-group.is-active .wp-fan {
+        color: var(--error-500);
+    }
+
+    .ac-group.is-active {
+        color: var(--cyan-500);
+    }
+
+    @media (min-width: 1024px) {
+        .story-layout {
+            grid-template-columns: 1fr 400px;
+            gap: var(--spacing-2xl);
+            align-items: start;
+        }
+
+        .story-media {
+            position: sticky;
+            top: 5rem;
+            height: calc(100vh - 5rem);
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-media__frame {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .story-content {
+            gap: 95vh;
+            padding: 15vh 0 15vh 1.5rem;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .story-layout {
+            grid-template-columns: 1fr 460px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .story-block,
+        .house-feature,
+        .wp-group .wp-box,
+        .wp-group .wp-fan,
+        .story-dot {
+            transition: none;
+        }
+    }
 </style>
+
+<script>
+    (() => {
+        if (typeof window === 'undefined') return;
+        const section = document.querySelector('.story');
+        const svg = document.getElementById('house-svg');
+        if (!section || !svg) return;
+
+        const blocks = Array.from(document.querySelectorAll('.story-block[data-story]'));
+        const dots = Array.from(document.querySelectorAll('.story-dot[data-dot]'));
+        const pvGroup = svg.querySelector('.pv-group');
+        const wpGroup = svg.querySelector('.wp-group');
+        const acGroup = svg.querySelector('.ac-group');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Kamera-Stationen im 800x600-Koordinatenraum des Hauses (x, y, width, height)
+        // Seitenverhältnis 720:370, enger zugeschnitten als die Vollansicht
+        const fullView = { x: 40, y: 115, w: 720, h: 370 };
+        const stations = {
+            photovoltaik: { x: 180, y: 112, w: 420, h: 216 },
+            waermepumpen: { x: 0, y: 338, w: 300, h: 154 },
+            klimaanlagen: { x: 357, y: 243, w: 300, h: 154 },
+        };
+
+        const lerp = (a, b, t) => a + (b - a) * t;
+        const lerpBox = (a, b, t) => ({
+            x: lerp(a.x, b.x, t),
+            y: lerp(a.y, b.y, t),
+            w: lerp(a.w, b.w, t),
+            h: lerp(a.h, b.h, t),
+        });
+
+        // Halte- und Übergangszonen: Kamera-Position und aktives Element kommen
+        // aus derselben Quelle, damit Farbe und Kamera nie auseinanderlaufen.
+        const zones = [
+            { end: 0.2, hold: 'photovoltaik' },
+            { end: 0.35, from: 'photovoltaik', to: 'waermepumpen' },
+            { end: 0.55, hold: 'waermepumpen' },
+            { end: 0.7, from: 'waermepumpen', to: 'klimaanlagen' },
+            { end: 1, hold: 'klimaanlagen' },
+        ];
+
+        const getState = (progress) => {
+            let start = 0;
+            for (const zone of zones) {
+                if (progress <= zone.end || zone === zones[zones.length - 1]) {
+                    if (zone.hold) {
+                        return { box: stations[zone.hold], active: zone.hold };
+                    }
+                    const t = (progress - start) / (zone.end - start);
+                    return {
+                        box: lerpBox(stations[zone.from], stations[zone.to], t),
+                        active: t < 0.5 ? zone.from : zone.to,
+                    };
+                }
+                start = zone.end;
+            }
+            return { box: stations.klimaanlagen, active: 'klimaanlagen' };
+        };
+
+        const setActive = (key) => {
+            blocks.forEach((el) => el.classList.toggle('is-active', el.dataset.story === key));
+            dots.forEach((el) => el.classList.toggle('is-active', el.dataset.dot === key));
+            pvGroup?.classList.toggle('is-active', key === 'photovoltaik');
+            wpGroup?.classList.toggle('is-active', key === 'waermepumpen');
+            acGroup?.classList.toggle('is-active', key === 'klimaanlagen');
+        };
+
+        let ticking = false;
+
+        const update = () => {
+            ticking = false;
+            const rect = section.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const total = rect.height + vh * 0.6;
+            const scrolled = vh * 0.85 - rect.top;
+            const progress = reduceMotion ? 1 : Math.min(1, Math.max(0, scrolled / total));
+
+            const { box, active } = getState(progress);
+            setActive(active);
+
+            if (window.innerWidth >= 1024) {
+                svg.setAttribute('viewBox', `${box.x} ${box.y} ${box.w} ${box.h}`);
+            } else {
+                svg.setAttribute('viewBox', `${fullView.x} ${fullView.y} ${fullView.w} ${fullView.h}`);
+            }
+        };
+
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        };
+
+        update();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+    })();
+</script>
