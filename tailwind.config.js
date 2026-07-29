@@ -9,12 +9,14 @@ export default {
       },
       colors: {
         brand: {
-          primary: '#0f4c81',
-          accent: '#06b6d4',
+          primary: 'var(--color-brand-primary)',
+          'primary-hover': 'var(--color-brand-primary-hover)',
+          accent: 'var(--color-brand-accent)',
         },
       },
       boxShadow: {
-        'soft-lg': '0 15px 40px rgba(15,23,42,0.06)',
+        'soft-lg': 'var(--shadow-default)',
+        'soft-hover': 'var(--shadow-hover)',
       },
     },
   },
