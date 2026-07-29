@@ -49,6 +49,10 @@
   --info-500: #0f4c81;
   --info-700: #0a355a;
 
+  --error-50: #fef2f2;
+  --error-500: #dc2626;
+  --error-700: #991b1b;
+
   --white: #ffffff;
 
   /* Farben – Semantic (aus Figma "Color", Mode "Beispiel Heizungsbau") */
@@ -59,6 +63,7 @@
   --color-bg-brand: var(--blue-500);
   --color-bg-success-subtle: var(--success-50);
   --color-bg-info-subtle: var(--info-50);
+  --color-bg-error-subtle: var(--error-50);
 
   --color-text-primary: var(--gray-900);
   --color-text-secondary: var(--gray-700);
@@ -67,10 +72,12 @@
   --color-text-brand: var(--blue-500);
   --color-text-success: var(--success-700);
   --color-text-info: var(--info-700);
+  --color-text-error: var(--error-700);
 
   --color-border-default: var(--gray-200);
   --color-border-subtle: var(--gray-100);
   --color-border-focus: var(--blue-500);
+  --color-border-error: var(--error-500);
 
   --color-brand-primary: var(--blue-500);
   --color-brand-primary-hover: var(--blue-600);

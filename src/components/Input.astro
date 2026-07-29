@@ -1,0 +1,188 @@
+---
+interface Props {
+  label: string;
+  name: string;
+  as?: 'input' | 'textarea';
+  type?: string;
+  required?: boolean;
+  error?: string;
+  placeholder?: string;
+  value?: string;
+  rows?: number;
+  id?: string;
+  disabled?: boolean;
+  autocomplete?: string;
+  class?: string;
+}
+
+const {
+  label,
+  name,
+  as = 'input',
+  type = 'text',
+  required = false,
+  error,
+  placeholder,
+  value,
+  rows = 4,
+  id = name,
+  disabled = false,
+  autocomplete,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const hasIcon = Astro.slots.has('icon');
+const errorId = error ? `${id}-error` : undefined;
+---
+
+<div class:list={['field', className]}>
+  <label for={id} class="field__label">
+    {label}
+    {required && (
+      <span class="field__required" aria-hidden="true">*</span>
+    )}
+  </label>
+
+  <div
+    class:list={[
+      'field__control',
+      hasIcon && 'field__control--icon',
+      error && 'field__control--error',
+    ]}
+  >
+    {hasIcon && (
+      <span class="field__icon" aria-hidden="true">
+        <slot name="icon" />
+      </span>
+    )}
+    {as === 'textarea' ? (
+      <textarea
+        id={id}
+        name={name}
+        rows={rows}
+        placeholder={placeholder}
+        required={required}
+        disabled={disabled}
+        aria-invalid={error ? 'true' : undefined}
+        aria-describedby={errorId}
+        {...rest}
+      >{value}</textarea>
+    ) : (
+      <input
+        id={id}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        required={required}
+        disabled={disabled}
+        autocomplete={autocomplete}
+        aria-invalid={error ? 'true' : undefined}
+        aria-describedby={errorId}
+        {...rest}
+      />
+    )}
+  </div>
+
+  {error && (
+    <p class="field__error" id={errorId}>{error}</p>
+  )}
+</div>
+
+<style>
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .field__label {
+    font-size: var(--text-body-sm-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .field__required {
+    color: var(--color-border-error);
+    margin-left: 2px;
+  }
+
+  .field__control {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    padding: 0 var(--spacing-md);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .field__control:focus-within {
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-border-focus) 20%, transparent);
+  }
+
+  .field__control--error {
+    border-color: var(--color-border-error);
+  }
+
+  .field__control--error:focus-within {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-border-error) 20%, transparent);
+  }
+
+  .field__icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .field__icon :global(svg) {
+    width: 1.15em;
+    height: 1.15em;
+  }
+
+  .field__control input,
+  .field__control textarea {
+    flex: 1;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: var(--text-body-size);
+    color: var(--color-text-primary);
+    padding: var(--spacing-sm) 0;
+  }
+
+  .field__control textarea {
+    resize: vertical;
+    min-height: 3.5em;
+    padding: var(--spacing-md) 0;
+  }
+
+  .field__control input::placeholder,
+  .field__control textarea::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .field__control:has(input:disabled),
+  .field__control:has(textarea:disabled) {
+    background: var(--color-bg-subtle);
+    cursor: not-allowed;
+  }
+
+  .field__control input:disabled,
+  .field__control textarea:disabled {
+    cursor: not-allowed;
+    color: var(--color-text-muted);
+  }
+
+  .field__error {
+    font-size: var(--text-body-sm-size);
+    color: var(--color-text-error);
+    margin: 0;
+  }
+</style>
