@@ -1,6 +1,21 @@
 ---
 const { title = 'Beispiel Heizungsbau GmbH', description = 'Wärmepumpen, Heiztechnik und Service in Bochum' } = Astro.props;
 import '../styles/globals.css';
+const navItems = [
+  { href: '/', label: 'Start' },
+  { href: '/aktuelles', label: 'Aktuelles' },
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/referenzen', label: 'Referenzen' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+const currentPath = Astro.url?.pathname ?? new URL(Astro.request.url).pathname;
+const isActive = (href) => {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+};
+const navClass = (href) => isActive(href)
+  ? 'text-sm text-brand-primary font-semibold'
+  : 'text-sm text-slate-700 hover:text-slate-900';
 ---
 <!doctype html>
 <html lang="de">
@@ -40,22 +55,22 @@ import '../styles/globals.css';
 								</svg>
 						</a>
 				<nav class="hidden md:flex gap-6 items-center">
-					<a href="/" class="text-sm text-slate-700 hover:text-slate-900">Start</a>
-					<a href="/aktuelles" class="text-sm text-slate-700 hover:text-slate-900">Aktuelles</a>
-					<a href="/leistungen" class="text-sm text-slate-700 hover:text-slate-900">Leistungen</a>
-					<a href="/referenzen" class="text-sm text-slate-700 hover:text-slate-900">Referenzen</a>
-					<a href="/kontakt" class="text-sm text-slate-700 hover:text-slate-900">Kontakt</a>
+					<a href="/" class={navClass('/')}>Start</a>
+					<a href="/aktuelles" class={navClass('/aktuelles')}>Aktuelles</a>
+					<a href="/leistungen" class={navClass('/leistungen')}>Leistungen</a>
+					<a href="/referenzen" class={navClass('/referenzen')}>Referenzen</a>
+					<a href="/kontakt" class={navClass('/kontakt')}>Kontakt</a>
 				</nav>
-				<button id="mobile-menu-btn" class="md:hidden p-2 rounded bg-white shadow">Menu</button>
+				<button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" class="md:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand-accent">Menu</button>
 			</div>
 				<!-- Mobile nav (simple) -->
-				<nav id="mobile-nav" class="md:hidden hidden border-t bg-white">
+				<nav id="mobile-nav" class="mobile-nav-panel md:hidden border-t bg-white">
 					<div class="px-6 py-4 flex flex-col gap-3">
-						<a href="/" class="text-sm text-slate-700">Start</a>
-						<a href="/aktuelles" class="text-sm text-slate-700">Aktuelles</a>
-						<a href="/leistungen" class="text-sm text-slate-700">Leistungen</a>
-						<a href="/referenzen" class="text-sm text-slate-700">Referenzen</a>
-						<a href="/kontakt" class="text-sm text-slate-700">Kontakt</a>
+						<a href="/" class={navClass('/')}>Start</a>
+						<a href="/aktuelles" class={navClass('/aktuelles')}>Aktuelles</a>
+						<a href="/leistungen" class={navClass('/leistungen')}>Leistungen</a>
+						<a href="/referenzen" class={navClass('/referenzen')}>Referenzen</a>
+						<a href="/kontakt" class={navClass('/kontakt')}>Kontakt</a>
 					</div>
 				</nav>
 		</header>
@@ -114,10 +129,16 @@ import '../styles/globals.css';
 				});
 
 				// Mobile menu toggle
-				document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-					const m = document.getElementById('mobile-nav');
-					if (!m) return;
-					m.classList.toggle('hidden');
+				const mobileBtn = document.getElementById('mobile-menu-btn');
+				const mobileNav = document.getElementById('mobile-nav');
+				mobileBtn?.addEventListener('click', () => {
+					if (!mobileNav) return;
+					mobileNav.classList.toggle('open');
+					const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+					mobileBtn.setAttribute('aria-expanded', String(!expanded));
+				});
+				document.querySelectorAll('#mobile-nav a').forEach((link) => {
+					link.addEventListener('click', () => mobileNav?.classList.remove('open'));
 				});
 			})();
 		</script>
